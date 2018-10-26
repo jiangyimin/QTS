@@ -11,11 +11,11 @@ using System.Windows;
 
 namespace QTS.Strategy.Models
 {
-    public class AppBootstrap : BootstrapperBase
+    public class AppBootstrapper : BootstrapperBase
     {
         private CompositionContainer container;
 
-        public AppBootstrap()
+        public AppBootstrapper()
         {
             Initialize();
         }
@@ -25,6 +25,7 @@ namespace QTS.Strategy.Models
             container = new CompositionContainer(
                 new AggregateCatalog(AssemblySource.Instance.Select(x =>
                     new AssemblyCatalog(x)).OfType<ComposablePartCatalog>()));
+
             var batch = new CompositionBatch();
             batch.AddExportedValue<IWindowManager>(new WindowManager());
             batch.AddExportedValue<IEventAggregator>(new EventAggregator());

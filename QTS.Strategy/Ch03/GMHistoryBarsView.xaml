@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="QTS.Strategy.Ch03.GMHistoryBarsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="500">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Margin="0 0 10 0">
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                <TextBlock Text="Symbol" Width="70"/>
+                <TextBox x:Name="Symbol" Width="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                <TextBlock Text="Frequency" Width="70"/>
+                <TextBox x:Name="Frequency" Width="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
+                <TextBlock Text="Start Time" Width="70"/>
+                <TextBox x:Name="StartTime" Width="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
+                <TextBlock Text="End Time" Width="70"/>
+                <TextBox x:Name="EndTime" Width="100"/>
+            </StackPanel>
+            <Button x:Name="GetHistBars" Content="History Bars" Width="120" Margin="0 10 0 0"/>
+        </StackPanel>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Historical Bar Data:" VerticalAlignment="Bottom" Margin="0 0 0 2"/>
+            <DataGrid x:Name="HistBars" ColumnWidth="*" IsReadOnly ="True" FontSize="10" Grid.Row="1"/>
+        </Grid>
+    </Grid>
+</UserControl>

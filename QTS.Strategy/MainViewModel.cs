@@ -12,8 +12,9 @@ namespace QTS.Strategy
     [Export(typeof(MainViewModel))]
     public class MainViewModel : Conductor<IScreen>.Collection.OneActive, IConductor, IHandle<ModelEvents>
     {
-        IEnumerable<IScreen> myScreens;
+        private readonly IEnumerable<IScreen> myScreens;
         private readonly IEventAggregator _events;
+
         [ImportingConstructor]
         public MainViewModel([ImportMany]IEnumerable<IScreen> screens, IEventAggregator events)
         {
@@ -21,7 +22,7 @@ namespace QTS.Strategy
             Items.Clear();
             this._events = events;
             _events.Subscribe(this);
-            DisplayName = "Quant Book Project";
+            DisplayName = "量化交易系统";
         }
 
         private string chapter;
@@ -89,8 +90,6 @@ namespace QTS.Strategy
                 NotifyOfPropertyChange(() => StatusText);
             }
         }
-        
-
        
         public void OnClick(object sender)
         {
