@@ -47,6 +47,14 @@
     <Reference Include="Caliburn.Micro.Platform.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Chart3DControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Chart3DControl.dll</HintPath>
+    </Reference>
+    <Reference Include="ChartControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ChartControl.dll</HintPath>
+    </Reference>
     <Reference Include="gmsdk-net">
       <HintPath>..\packages\gmsdk\gmsdk-net.dll</HintPath>
     </Reference>
@@ -190,6 +198,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Ch05\MySimpleLineView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -241,6 +253,10 @@
       <DependentUpon>GMHistoryBarsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ch03\GMHistoryBarsViewModel.cs" />
+    <Compile Include="Ch05\MySimpleLineView.xaml.cs">
+      <DependentUpon>MySimpleLineView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ch05\MySimpleLineViewModel.cs" />
     <Compile Include="EntityFrameworkCore\Instrument.cs" />
     <Compile Include="EntityFrameworkCore\QTSDbContext.cs" />
     <Compile Include="EntityFrameworkCore\Strategy.cs" />
